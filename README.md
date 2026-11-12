@@ -16,11 +16,19 @@
 
 
 ## Screenshots
+Fluid
+<img width="1170" height="734" alt="grenilux_fluid" src="https://github.com/user-attachments/assets/63c3403e-3361-45f9-8021-d4acee378c1a" />
+
+Spectrum
+<img width="1174" height="737" alt="grenilux_spectrum" src="https://github.com/user-attachments/assets/71096c51-30d3-4125-adb7-b79e057fe04a" />
+
+Wave
+<img width="1176" height="742" alt="grenilux_wave" src="https://github.com/user-attachments/assets/840a22ef-c59f-41ad-a6a0-b238bf03fd85" />
 
 
 ## Demo Video
 
-[[Watch the video](https://youtube.com)](https://youtu.be/x0ucB4NfLFM)
+[[Watch the video](https://youtu.be/x0ucB4NfLFM)]
 
 
 
