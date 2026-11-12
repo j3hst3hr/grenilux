@@ -15,6 +15,8 @@
 - **Windows standalone app:** visualize your audio interface input without a DAW
 
 
+New to Grenilux? Read the [User Guide](USER_GUIDE.md).
+
 ## Screenshots
 Fluid
 <img width="1170" height="734" alt="grenilux_fluid" src="https://github.com/user-attachments/assets/63c3403e-3361-45f9-8021-d4acee378c1a" />
@@ -34,8 +36,6 @@ Wave
 
 
 
-
-New to Grenilux? Read the [User Guide](USER_GUIDE.md).
 
 ## Download
 
