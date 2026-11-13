@@ -13,6 +13,7 @@
 - **Presets** that are saved with your project
 - **Perform window:** fullscreen on any monitor, for live shows
 - **Windows standalone app:** visualize your audio interface input without a DAW
+- **Visualize any music on Windows:** the standalone app can follow whatever your computer is playing (VLC, Windows Media Player, MusicBee, a browser...), with no extra software
 
 
 New to Grenilux? Read the [User Guide](USER_GUIDE.md).
@@ -68,7 +69,8 @@ To check that the flag is gone, run `xattr -lr ~/Library/Audio/Plug-Ins/VST3/Gre
 4. **Standalone app:** run `Grenilux.exe`. It needs no installation, so you can keep it anywhere.
    - Choose your audio interface under **DEVICE** and the input your instrument is plugged into under **INPUT**.
    - **Monitor** is off by default, so the app makes no sound and can't cause feedback.
-   - **F11** switches to fullscreen.
+   - **F11** switches to fullscreen. The bars hide after a moment; move the mouse to bring them back.
+   - **To visualize music:** under **DEVICE**, choose **System audio → Default output**, then play music in any player. The music keeps playing through your speakers as normal. Note detection turns off automatically, so the colours follow the music's frequencies.
 
 The Windows files carry a self-issued signature, not one from a certificate authority, so Windows may say "Unknown publisher". SmartScreen may also warn: click **More info → Run anyway**.
 

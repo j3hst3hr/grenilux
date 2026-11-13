@@ -323,17 +323,18 @@ Click the Perform window once first so that it receives your key presses.
 
 ## The Windows standalone app
 
-`Grenilux.exe` is Grenilux without a DAW: plug your instrument into your audio interface and watch. It's Windows only. Everything described above works the same; the app just adds an **audio bar** at the top for choosing where the sound comes from.
+`Grenilux.exe` is Grenilux without a DAW: plug your instrument into your audio interface and watch, or let it follow the music your computer is playing (see [System audio](#system-audio-visualize-the-music-your-computer-plays)). It's Windows only. Everything described above works the same; the app just adds an **audio bar** at the top for choosing where the sound comes from.
 
 ### The audio bar
 
 | Control | What it does |
 |---|---|
-| **DEVICE** | The audio interface or microphone to listen to. If the one you chose is unplugged, it stays in the list marked **(disconnected)**. |
+| **DEVICE** | The audio interface or microphone to listen to, or, under the **System audio** heading, what your computer is playing. If the one you chose is unplugged, it stays in the list marked **(disconnected)**. |
 | **Device settings…** | Opens a small window for the driver type, sample rate and buffer size. Most people never need it. Change these only if your interface needs a particular setting. |
 | **INPUT** | Which input of the device to use. `1: …`, `2: …` are single inputs; `1+2 (stereo)` is a stereo pair. For a guitar plugged into input 1, choose `1`. |
 | **Start / Stop** | **Stop** makes the app let go of your audio device (useful if another program needs it). **Start** begins listening again. |
-| **Monitor** | Off (the default): the app is completely silent. On: you hear the input through your computer's default playback device. See the warning below. |
+| **Detect notes** | On: Grenilux finds the note you're playing. Off: the colours follow frequency, which suits music. See [Detect notes](#detect-notes). |
+| **Monitor** | Off (the default): the app is completely silent. On: you hear the input through your computer's default playback device. See the warning below. Greyed out for System audio. |
 | **LEVEL** | The input level, with one bar per input (two for a stereo pair) and the level in dB. It turns red if the input is too loud. |
 | **Status line** | Tells you what's going on. See the next table. |
 
@@ -361,13 +362,51 @@ Grenilux never switches to a different device behind your back. If your interfac
 
 If you pressed **Stop** yourself, Grenilux stays stopped until you press **Start**.
 
+### System audio: visualize the music your computer plays
+
+Below your audio-interface inputs, the **DEVICE** list has a **System audio** heading. Its entries are what the computer plays:
+
+- **Default output**: whatever Windows' default output device is. If you change the default in Windows, Grenilux follows it.
+- One entry for each active output device (speakers, headphones, HDMI).
+
+Choose one and play music in any player: VLC, Windows Media Player, MusicBee, a browser, anything. The music still comes out of your speakers as before; Grenilux only listens. You don't need a virtual cable or any other software.
+
+With System audio chosen:
+
+- **INPUT** is the stereo pair (1+2). You can pick Left or Right alone.
+- **Monitor** is switched off and greyed out, because playing the captured sound back out would echo the music. Your Monitor setting for interface inputs is kept for when you switch back.
+- **Detect notes** turns off (see below).
+- The status line reads, for example, `System audio · Speakers (Realtek Audio) · 48 kHz`.
+- When nothing is playing, the picture fades out and the app keeps waiting. That's normal.
+- If the chosen output device is unplugged, the status says it was disconnected, and the app reconnects when it returns.
+
+What can't be captured:
+
+- Players that use WASAPI exclusive mode or ASIO (Ableton Live with an ASIO driver, for example). They bypass the Windows mixer.
+- A single app on its own. System audio is everything on that output, notification sounds included.
+
+The level Grenilux sees doesn't depend on the Windows volume, so you can turn your speakers down without the picture getting weaker. The player's own volume slider does change it.
+
+### Detect notes
+
+**Detect notes**, next to Monitor, switches note detection on and off.
+
+- **On** (the default for an instrument input): Grenilux finds the note you're playing, shows its name, and can colour by it.
+- **Off** (the default for System audio): no note is shown anywhere, and the colours follow frequency. This suits a full song, where there's no single note to find. The **COLOR** box in the top bar is greyed out while it's off, and the status strip shows `NOTE off`.
+
+It switches by itself when you change between System audio and an interface input. You can change it at any time, and Grenilux remembers your choice separately for System audio and for your interface.
+
 ### Fullscreen with F11
 
-Press **F11** to make the whole app fullscreen. Press **F11** again, or **Esc**, to go back. For a picture without any controls, use [Perform mode](#perform-mode) instead: click **Perform**, then press **F**.
+Press **F11** to make the window fullscreen: the picture fills the whole screen. The audio bar, the top bar and the status strip sit over the picture and hide after 2.5 seconds without mouse movement, along with the mouse cursor. Move the mouse to bring them back.
+
+The bars stay while the mouse is over one of them, and while a menu, a dialog, the colour editor or the Controls panel is open. Press **F11** again, or **Esc**, to go back.
+
+For fullscreen on a second monitor, use [Perform mode](#perform-mode): click **Perform**, then press **F**.
 
 ### What the app remembers
 
-When you close the app it remembers your device and input, the Monitor switch, the window's position and size, and your whole look (view, colours, knobs). Only one copy of the app runs at a time; starting it again brings the open window to the front.
+When you close the app it remembers your device and input, the Monitor and Detect notes switches, the window's position and size, and your whole look (view, colours, knobs). Only one copy of the app runs at a time; starting it again brings the open window to the front.
 
 These settings live in one file:
 
